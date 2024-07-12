@@ -1,7 +1,6 @@
 package com.igriss.AkkSell;
 
 import com.igriss.AkkSell.requests.RegisterRequest;
-import com.igriss.AkkSell.roles.Role;
 import com.igriss.AkkSell.services.AuthenticationService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

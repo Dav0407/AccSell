@@ -3,10 +3,6 @@ package com.igriss.AkkSell.entities;
 import com.igriss.AkkSell.token_type.TokenType;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
-
-import java.util.Objects;
-
 @Getter
 @Setter
 @ToString
