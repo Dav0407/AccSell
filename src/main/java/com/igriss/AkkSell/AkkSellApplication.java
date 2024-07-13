@@ -19,7 +19,7 @@ public class AkkSellApplication {
 		SpringApplication.run(AkkSellApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public CommandLineRunner commandLineRunner(
 			AuthenticationService authenticationService
 	){
@@ -31,7 +31,7 @@ public class AkkSellApplication {
 					.password("password")
 					.role(ADMIN)
 					.build();
-			System.out.println("Admin token: " + authenticationService.register(admin).getToken());
+			System.out.println("Admin token: " + authenticationService.register(admin).getAccessToken());
 
 			var manager = RegisterRequest.builder()
 					.firstname("Manager")
@@ -40,8 +40,8 @@ public class AkkSellApplication {
 					.password("password")
 					.role(MANAGER)
 					.build();
-			System.out.println("Manager token: " + authenticationService.register(manager).getToken());
+			System.out.println("Manager token: " + authenticationService.register(manager).getAccessToken());
 		};
 
-	}
+	}*/
 }
