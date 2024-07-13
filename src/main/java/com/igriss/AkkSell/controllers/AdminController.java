@@ -1,9 +1,11 @@
 package com.igriss.AkkSell.controllers;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/admin")
+@Hidden
 public class AdminController {
 
     @GetMapping
