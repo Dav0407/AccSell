@@ -1,9 +1,9 @@
 package com.igriss.AkkSell.controllers;
 
-import com.igriss.AkkSell.requests.AuthenticationRequest;
-import com.igriss.AkkSell.requests.RegisterRequest;
-import com.igriss.AkkSell.responses.AuthenticationResponse;
-import com.igriss.AkkSell.services.AuthenticationService;
+import com.igriss.AkkSell.dtos.requests.AuthenticationRequest;
+import com.igriss.AkkSell.dtos.requests.RegisterRequest;
+import com.igriss.AkkSell.dtos.responses.AuthenticationResponse;
+import com.igriss.AkkSell.service_impl.AuthenticationServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class AuthenticationController {
 
-    private final AuthenticationService authenticationService;
+    private final AuthenticationServiceImpl authenticationService;
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> registerUser(@RequestBody RegisterRequest request) {

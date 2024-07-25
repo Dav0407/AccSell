@@ -1,4 +1,4 @@
-package com.igriss.AkkSell.services;
+package com.igriss.AkkSell.service_impl;
 
 import com.igriss.AkkSell.repositories.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class LogoutService implements LogoutHandler {
+public class LogoutServiceImpl implements LogoutHandler {
 
     private final TokenRepository tokenRepository;
 

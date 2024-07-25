@@ -1,4 +1,4 @@
-package com.igriss.AkkSell.permissions;
+package com.igriss.AkkSell.security.permissions;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

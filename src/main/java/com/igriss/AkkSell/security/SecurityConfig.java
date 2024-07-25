@@ -12,9 +12,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 
-import static com.igriss.AkkSell.permissions.Permission.*;
-import static com.igriss.AkkSell.roles.Role.ADMIN;
-import static com.igriss.AkkSell.roles.Role.MANAGER;
+import static com.igriss.AkkSell.security.permissions.Permission.*;
+import static com.igriss.AkkSell.security.roles.Role.*;
 import static org.springframework.http.HttpMethod.*;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
@@ -72,8 +71,7 @@ public class SecurityConfig {
                                         (request, response, authentication) ->
                                                 SecurityContextHolder.clearContext()
                                 )
-                )
-        ;
+                );
         return http.build();
     }
 

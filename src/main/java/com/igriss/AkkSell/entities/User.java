@@ -1,6 +1,6 @@
 package com.igriss.AkkSell.entities;
 
-import com.igriss.AkkSell.roles.Role;
+import com.igriss.AkkSell.security.roles.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -20,15 +20,31 @@ public class User implements UserDetails { //We are implementing UserDetails to 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String lastName;
+
+    @Column(nullable = false)
     private String phoneNumber;
+
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
+
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Role role;
+
     @OneToMany(mappedBy = "user")
     private List<Token> tokens;
+
+    @OneToMany(mappedBy = "user")
+    private List<VideoPost> videoPosts;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -1,4 +1,4 @@
-package com.igriss.AkkSell.requests;
+package com.igriss.AkkSell.dtos.requests;
 import lombok.*;
 
 @Data

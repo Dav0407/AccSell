@@ -1,6 +1,6 @@
-package com.igriss.AkkSell.controllers;
+package com.igriss.AkkSell.controllers.user_endpoints;
 
-import com.igriss.AkkSell.requests.ChangePasswordRequest;
+import com.igriss.AkkSell.dtos.requests.ChangePasswordRequest;
 import com.igriss.AkkSell.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v1/profile")
 @RequiredArgsConstructor
-public class UserController {
+public class ProfileController {
     private final UserService userService;
 
     @PatchMapping("/change-password")

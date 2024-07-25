@@ -1,30 +1,30 @@
-package com.igriss.AkkSell.controllers;
+package com.igriss.AkkSell.controllers.manager_endpoints;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/admin")
+@RequestMapping("/api/v1/management")
 @Hidden
-public class AdminController {
+public class ManagementController {
 
     @GetMapping
     public String get(){
-        return "GET:: admin controller";
+        return "GET:: management controller";
     }
 
     @PostMapping
     public String post(){
-        return "POST:: admin controller";
+        return "POST:: management controller";
     }
 
     @PutMapping
     public String put(){
-        return "PUT:: admin controller";
+        return "PUT:: management controller";
     }
 
     @DeleteMapping
     public String delete(){
-        return "DELETE:: admin controller";
+        return "DELETE:: management controller";
     }
 }

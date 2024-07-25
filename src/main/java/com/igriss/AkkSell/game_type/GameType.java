@@ -1,0 +1,17 @@
+package com.igriss.AkkSell.game_type;
+
+public enum GameType {
+    CLASH_OF_CLANS,
+    CLASH_ROYAL,
+    BRAWL_STARS,
+    LEAGUE_OF_LEGENDS,
+    MOBILE_LEGENDS,
+    PUBG_MOBILE,
+    CALL_OF_DUTY_MOBILE,
+    FORTNIGHT_MOBILE,
+    RAID_SHADOW_LEGENDS,
+    GENSHIN_IMPACT,
+    EA_SPORTS_FC,
+    E_FOOTBALL,
+    DREAM_LEAGUE
+}

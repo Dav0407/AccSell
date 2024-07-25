@@ -1,5 +1,5 @@
-package com.igriss.AkkSell.requests;
-import com.igriss.AkkSell.roles.Role;
+package com.igriss.AkkSell.dtos.requests;
+import com.igriss.AkkSell.security.roles.Role;
 import lombok.*;
 
 @Data

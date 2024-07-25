@@ -1,7 +1,7 @@
 package com.igriss.AkkSell.security;
 
 import com.igriss.AkkSell.repositories.TokenRepository;
-import com.igriss.AkkSell.services.JwtService;
+import com.igriss.AkkSell.service_impl.JwtServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,7 +22,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtService jwtService;
+    private final JwtServiceImpl jwtService;
     private final UserDetailsService userDetailsService;
     private final TokenRepository tokenRepository;
 

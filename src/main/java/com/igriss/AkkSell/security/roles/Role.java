@@ -1,6 +1,6 @@
-package com.igriss.AkkSell.roles;
+package com.igriss.AkkSell.security.roles;
 
-import com.igriss.AkkSell.permissions.Permission;
+import com.igriss.AkkSell.security.permissions.Permission;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.igriss.AkkSell.permissions.Permission.*;
+import static com.igriss.AkkSell.security.permissions.Permission.*;
 
 @Getter
 @RequiredArgsConstructor

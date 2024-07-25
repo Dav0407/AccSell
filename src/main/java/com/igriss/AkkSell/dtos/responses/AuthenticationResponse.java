@@ -1,4 +1,4 @@
-package com.igriss.AkkSell.responses;
+package com.igriss.AkkSell.dtos.responses;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
