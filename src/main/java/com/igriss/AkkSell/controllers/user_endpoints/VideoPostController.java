@@ -4,13 +4,14 @@ import com.igriss.AkkSell.dtos.VideoPostDTO;
 import com.igriss.AkkSell.entities.User;
 import com.igriss.AkkSell.entities.VideoPost;
 import com.igriss.AkkSell.mappers.VideoPostMapper;
+import com.igriss.AkkSell.services.UserService;
 import com.igriss.AkkSell.services.VideoPostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,13 +23,16 @@ public class VideoPostController {
 
     private final VideoPostService videoPostService;
     private final VideoPostMapper videoPostMapper;
+    private final UserService userService;
 
     @PostMapping(consumes = "multipart/form-data")
     public ResponseEntity<VideoPostDTO> createVideoPost(@ModelAttribute VideoPostDTO videoPostDTO) throws IOException {
         // Get the authenticated user
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        User userDetails = (User) authentication.getPrincipal();
-        videoPostDTO.setUserId(userDetails.getId());
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        User user = userService.findByEmail(userDetails.getUsername());
+
+        videoPostDTO.setUserId(user.getId());
 
         VideoPost createdVideoPost = videoPostService.createVideoPost(videoPostDTO, videoPostDTO.getVideoFile());
         return ResponseEntity.ok(videoPostMapper.convertToDTO(createdVideoPost));

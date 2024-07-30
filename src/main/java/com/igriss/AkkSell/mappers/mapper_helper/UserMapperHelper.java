@@ -3,7 +3,6 @@ package com.igriss.AkkSell.mappers.mapper_helper;
 import com.igriss.AkkSell.entities.User;
 import com.igriss.AkkSell.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

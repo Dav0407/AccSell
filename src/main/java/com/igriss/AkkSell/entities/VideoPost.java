@@ -3,7 +3,6 @@ package com.igriss.AkkSell.entities;
 import com.igriss.AkkSell.game_type.GameType;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
