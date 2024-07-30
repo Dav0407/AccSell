@@ -3,6 +3,7 @@ package com.igriss.AkkSell.entities;
 import com.igriss.AkkSell.game_type.GameType;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -20,7 +21,7 @@ public class VideoPost {
     private Long id;
 
     @Column(nullable = false)
-    private String video;
+    private String videoFilename;
 
     @Column(nullable = false)
     private String title;

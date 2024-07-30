@@ -5,6 +5,7 @@ import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @ToString
 @Setter
@@ -12,8 +13,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class VideoPostDTO {
-    private MultipartFile videoFile;
+public class PhotoPostDTO {
+    private List<MultipartFile> photoFiles;
     private String video;
     private String title;
     private String description;

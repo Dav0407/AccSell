@@ -5,8 +5,9 @@ import com.igriss.AkkSell.entities.VideoPost;
 import com.igriss.AkkSell.mappers.mapper_helper.UserMapperHelper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingConstants;
 
-@Mapper(componentModel = "spring", uses = {UserMapperHelper.class})
+@Mapper(componentModel = MappingConstants.ComponentModel.SPRING, uses = {UserMapperHelper.class})
 public interface VideoPostMapper {
 
     @Mapping(target = "user", source = "userId")

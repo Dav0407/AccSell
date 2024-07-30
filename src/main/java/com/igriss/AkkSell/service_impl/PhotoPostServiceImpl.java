@@ -1,6 +1,8 @@
 package com.igriss.AkkSell.service_impl;
 
+import com.igriss.AkkSell.dtos.PhotoPostDTO;
 import com.igriss.AkkSell.entities.PhotoPost;
+import com.igriss.AkkSell.mappers.PhotoPostMapper;
 import com.igriss.AkkSell.repositories.PhotoPostRepository;
 import com.igriss.AkkSell.services.PhotoPostService;
 import lombok.RequiredArgsConstructor;
@@ -20,10 +22,12 @@ import java.util.stream.Collectors;
 public class PhotoPostServiceImpl implements PhotoPostService {
 
     private final PhotoPostRepository photoPostRepository;
+    private final PhotoPostMapper photoPostMapper;
 
     @Override
-    public PhotoPost createPhotoPost(PhotoPost photoPost, List<MultipartFile> photos) {
+    public PhotoPost createPhotoPost(PhotoPostDTO photoPostDTO, List<MultipartFile> photos) {
         List<String> photoPaths = savePhotos(photos);
+        PhotoPost photoPost = photoPostMapper.convertToEntity(photoPostDTO);
         photoPost.setPhotoPaths(photoPaths);
         return photoPostRepository.save(photoPost);
     }
@@ -38,9 +42,10 @@ public class PhotoPostServiceImpl implements PhotoPostService {
     }
 
     @Override
-    public PhotoPost updatePhotoPost(Long id, PhotoPost photoPost, List<MultipartFile> photos) {
+    public PhotoPost updatePhotoPost(Long id, PhotoPostDTO photoPostDTO, List<MultipartFile> photos) {
         if (photoPostRepository.existsById(id)) {
             List<String> photoPaths = savePhotos(photos);
+            PhotoPost photoPost = photoPostMapper.convertToEntity(photoPostDTO);
             photoPost.setPhotoPaths(photoPaths);
             photoPost.setId(id);
             return photoPostRepository.save(photoPost);
