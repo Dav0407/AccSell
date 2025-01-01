@@ -3,7 +3,7 @@ package com.igriss.AkkSell.controllers;
 import com.igriss.AkkSell.dtos.requests.AuthenticationRequest;
 import com.igriss.AkkSell.dtos.requests.RegisterRequest;
 import com.igriss.AkkSell.dtos.responses.AuthenticationResponse;
-import com.igriss.AkkSell.service_impl.AuthenticationServiceImpl;
+import com.igriss.AkkSell.services.AuthenticationService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +20,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class AuthenticationController {
 
-    private final AuthenticationServiceImpl authenticationService;
-
+    private final AuthenticationService authenticationService;
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> registerUser(@RequestBody RegisterRequest request) {
