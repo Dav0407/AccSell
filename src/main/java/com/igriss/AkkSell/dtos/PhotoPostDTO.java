@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class PhotoPostDTO {
+
     private List<MultipartFile> photoFiles;
     private String video;
     private String title;
